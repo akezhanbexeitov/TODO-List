@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,26 +8,19 @@
     <link rel="stylesheet" href="style.css">
     <title>TODO List</title>
 </head>
+
 <body>
 
     <!-- NotePen: https://codepen.io/amwill/pen/YyexrJ -->
     <!-- Color palette: https://colorhunt.co/palette/ffe9a0367e18f57328cc3636 -->
-    
+
+    <h2 style="text-align: center;">TODO List</h2>
+    <form class="tasks-form">
+        <input class="tasks-form__input" type="text" placeholder="Enter Task Name">
+        <button class="tasks-form__button" type="submit">Add Task</button>
+    </form>
+
     <div class="TODO-list">
-        <div class="tasks-body">
-            <h2 class="tasks-body__heading" style="text-align: center;">TODO List</h2>
-
-            
-        </div>
-
-        <form class="tasks-form">
-            <input class="tasks-form__input" type="text" placeholder="Enter Task Name">
-            <button class="tasks-form__button" type="submit">Add Task</button>
-        </form>
-    </div>
-
-
-    <div class="paper">
         <div class="lines">
             <div class="tasks">
                 <ul class="tasks-body__list list"></ul>
@@ -39,4 +33,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

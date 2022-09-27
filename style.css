@@ -47,7 +47,7 @@ body {
     background-color: #265512;
 }
 
-.paper {
+.TODO-list {
     position: absolute;
     height: 520px;
     width: 450px;
@@ -58,7 +58,7 @@ body {
     box-shadow: 0px 0px 5px 0px #888;
 }
 
-.paper::before {
+.TODO-list::before {
     content: '';
     position: absolute;
     left: 45px;
@@ -86,6 +86,36 @@ body {
     outline: none;
 }
 
+.list__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list__item_delete {
+    border: none;
+    background-color: #CC3636;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 10px;
+    transition: .3s ease-in;
+    height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.list__item_delete:hover {
+    background-color: #a92d2d;
+}
+
+.list-item__body {
+    display: flex;
+}
+
+.list-item__task {
+    margin: 0;
+}
+
 .holes {
     position: absolute;
     left: 10px;
@@ -106,4 +136,8 @@ body {
 
 .hole-bottom {
     bottom: 10%;
+}
+
+.crossed {
+    text-decoration: line-through;
 }

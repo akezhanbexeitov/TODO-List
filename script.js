@@ -13,16 +13,39 @@ const addTask = e => {
     const value = input.value;
     if (value === '') {    // Check for empty input field
         alert('Type something in the input field');
+    } else if (input.value.length > 30) {
+        alert('The maximum number of characters is 30');
     } else {
-        const task = `<li>${value}<button class="list__item_delete" style="margin-left: 15px;">Delete</button></li>`;
+        const task = `
+            <li class="list__item">
+                <div class="list-item__body">
+                    <input class="list__item_tick" type="checkbox">
+                    <p class="list-item__task">${value}</p>
+                </div>
+                <button class="list__item_delete">Delete</button>
+            </li>
+        `;
         tasks.insertAdjacentHTML('beforeend', task);
     }
+
 
     // Add delete button's functionality
     const deleteButton = document.querySelectorAll('.list__item_delete');
     deleteButton.forEach(item => {
         item.addEventListener('click', function () {
             this.closest('li').remove()
+        })
+    })
+
+    // Cross task when checkbox is checked
+    const finishTask = document.querySelectorAll('.list__item_tick');
+    finishTask.forEach(item => {
+        item.addEventListener('change', function () {
+            if (this.checked) {
+                this.closest('div').classList.add("crossed")
+            } else {
+                this.closest('div').classList.remove("crossed")
+            }
         })
     })
 
